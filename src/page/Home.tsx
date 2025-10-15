@@ -7,6 +7,7 @@ import { ProductsService } from "@/api/products";
 import type { Product } from "@/types/types";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { RefreshCw } from "lucide-react";
 
 function ProductSkeleton() {
   return (
@@ -41,6 +42,10 @@ function Home() {
   } | null>(null);
 
   const itemsPerPage = 8;
+  const handleRefresh = () => {
+    ProductsService.clearCache();
+    refetchProducts();
+  };
 
   const {
     data: products,
@@ -135,27 +140,40 @@ function Home() {
             Descubre productos increíbles con precios increíbles
           </p>
         </div>
-
-        <div className="flex flex-wrap items-center justify-center gap-2 mb-8">
-          <Badge
-            variant={selectedCategory === "all" ? "default" : "outline"}
-            className="cursor-pointer px-4 py-2 text-sm"
-            onClick={() => handleCategoryChange("all")}
-          >
-            Todos los productos
-          </Badge>
-          {categories?.map((category) => (
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mb-8">
+          <div className="flex flex-wrap items-center justify-center gap-2">
             <Badge
-              key={category}
-              variant={selectedCategory === category ? "default" : "outline"}
-              className="cursor-pointer px-4 py-2 text-sm capitalize"
-              onClick={() => handleCategoryChange(category)}
+              variant={selectedCategory === "all" ? "default" : "outline"}
+              className="cursor-pointer px-4 py-2 text-sm"
+              onClick={() => handleCategoryChange("all")}
             >
-              {category}
+              Todos los productos
             </Badge>
-          ))}
-        </div>
+            {categories?.map((category) => (
+              <Badge
+                key={category}
+                variant={selectedCategory === category ? "default" : "outline"}
+                className="cursor-pointer px-4 py-2 text-sm capitalize"
+                onClick={() => handleCategoryChange(category)}
+              >
+                {category}
+              </Badge>
+            ))}
+          </div>
 
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={handleRefresh}
+            disabled={productsLoading}
+            className="flex items-center gap-2"
+          >
+            <RefreshCw
+              className={`h-4 w-4 ${productsLoading ? "animate-spin" : ""}`}
+            />
+            Recarga
+          </Button>
+        </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {paginatedData?.data.map((product) => (
             <CardProduct
