@@ -71,3 +71,9 @@ export default defineConfig([
   },
 ])
 ```
+### Installation
+pnpm install
+### Usage
+pnpm run dev
+### Cahche
+This proyect usee cahe for the products. in the client
