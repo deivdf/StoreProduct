@@ -7,6 +7,10 @@ export const ProductSchema = z.object({
   description: z.string().min(2).max(1000),
   category: z.string().min(2).max(100),
   image: z.string().url(),
+  rating: z.object({
+    rate: z.number().min(0).max(5),
+    count: z.number().nonnegative(),
+  }),
 });
 
 export const ProductsSchema = z.array(ProductSchema);
