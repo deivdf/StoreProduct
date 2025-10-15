@@ -58,7 +58,6 @@ export function CardProduct({
       )}
       onClick={handleProductClick}
     >
-      {/* Image Container */}
       <div className="relative aspect-square overflow-hidden bg-muted">
         <img
           src={product.image}
@@ -67,7 +66,6 @@ export function CardProduct({
           loading="lazy"
         />
 
-        {/* Category Badge */}
         <div className="absolute top-3 left-3">
           <span
             className={cn(
@@ -80,19 +78,15 @@ export function CardProduct({
         </div>
       </div>
 
-      {/* Content */}
       <div className="p-4">
-        {/* Title */}
         <h3 className="font-semibold text-foreground mb-2 text-sm leading-5 line-clamp-2">
           {product.title}
         </h3>
 
-        {/* Description */}
         <p className="text-sm text-muted-foreground mb-3 line-clamp-2">
           {product.description}
         </p>
 
-        {/* Price and Action */}
         <div className="flex items-center justify-between">
           <span className="text-lg font-bold text-foreground">
             {formatPrice(product.price)}
