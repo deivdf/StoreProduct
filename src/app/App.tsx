@@ -2,16 +2,16 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import About from "@/page/About";
 import Home from "@/page/Home";
 import PageDetail from "@/page/PageDetails";
+import logo from "@/assets/logo.jpg";
 
 function App() {
   return (
     <Router>
       <div>
         <header className="flex items-center justify-between px-6 py-4 bg-white shadow-md">
-          {/* Logo de la tienda */}
           <Link to="/" className="flex items-center gap-3">
             <img
-              src="/logo.png"
+              src={logo}
               alt="Store Logo"
               className="w-12 h-12 object-contain"
             />

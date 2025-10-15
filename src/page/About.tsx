@@ -17,7 +17,7 @@ function About() {
             cuidadosamente seleccionados y soluciones innovadoras.
           </p>
           <p className="text-lg text-gray-600">
-            nos dedicamos a ofrecer productos de alta calidad y servicios
+            Nos dedicamos a ofrecer productos de alta calidad y servicios
             excepcionales a nuestros clientes. Nuestro equipo está dedicado a
             brindar la mejor experiencia de compra, destacando productos
             cuidadosamente seleccionados y soluciones innovadoras.
