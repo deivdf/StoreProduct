@@ -98,7 +98,7 @@ export function CardProduct({
             className="flex items-center gap-1.5"
           >
             <ShoppingCart className="w-4 h-4" />
-            Add
+            Agregar al carrito
           </Button>
         </div>
       </div>
