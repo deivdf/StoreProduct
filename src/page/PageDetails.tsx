@@ -57,9 +57,9 @@ function ProductDetail() {
         <div className="text-red-500 mb-4">Error: {error}</div>
         <div className="flex gap-2">
           <Button onClick={() => navigate(-1)} variant="outline">
-            Go Back
+            Atras
           </Button>
-          <Button onClick={refetch}>Try Again</Button>
+          <Button onClick={refetch}>Intentar de nuevo</Button>
         </div>
       </div>
     );
@@ -68,9 +68,9 @@ function ProductDetail() {
   if (!product) {
     return (
       <div className="flex min-h-svh flex-col items-center justify-center">
-        <div className="text-muted-foreground mb-4">Product not found</div>
+        <div className="text-muted-foreground mb-4">Producto no encontrado</div>
         <Button onClick={() => navigate(-1)} variant="outline">
-          Go Back
+          Atras
         </Button>
       </div>
     );
@@ -81,7 +81,7 @@ function ProductDetail() {
       <div className="max-w-6xl mx-auto">
         <Button variant="ghost" onClick={() => navigate(-1)} className="mb-8">
           <ArrowLeft className="mr-2 h-4 w-4" />
-          Back
+          Atras
         </Button>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -109,7 +109,7 @@ function ProductDetail() {
                 </span>
               </div>
               <span className="text-muted-foreground">
-                ({product.rating.count} reviews)
+                ({product.rating.count} Reseñas)
               </span>
             </div>
 
@@ -119,7 +119,7 @@ function ProductDetail() {
 
             <Card>
               <CardContent className="pt-6">
-                <h2 className="font-semibold mb-2">Description</h2>
+                <h2 className="font-semibold mb-2">Descripción</h2>
                 <p className="text-muted-foreground leading-relaxed">
                   {product.description}
                 </p>
@@ -128,11 +128,11 @@ function ProductDetail() {
 
             <div className="flex flex-col gap-3 mt-4">
               <Button size="lg" onClick={handleBuyNow}>
-                Buy Now
+                Comprar Ahora
               </Button>
               <Button size="lg" variant="outline" onClick={handleAddToCart}>
                 <ShoppingCart className="mr-2 h-4 w-4" />
-                Add to Cart
+                Agregar al Carrito
               </Button>
             </div>
 
@@ -140,15 +140,19 @@ function ProductDetail() {
               <CardContent className="pt-6">
                 <div className="space-y-2 text-sm">
                   <div className="flex justify-between">
-                    <span className="text-muted-foreground">Availability</span>
-                    <span className="font-medium text-green-600">In Stock</span>
+                    <span className="text-muted-foreground">
+                      Disponibilidad
+                    </span>
+                    <span className="font-medium text-green-600">En Stock</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-muted-foreground">Category</span>
+                    <span className="text-muted-foreground">Categoría</span>
                     <span className="font-medium">{product.category}</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-muted-foreground">Product ID</span>
+                    <span className="text-muted-foreground">
+                      ID del Producto
+                    </span>
                     <span className="font-medium">#{product.id}</span>
                   </div>
                 </div>
