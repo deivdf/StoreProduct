@@ -15,7 +15,7 @@ function About() {
           </p>
           <p className="text-lg text-gray-600">
             Our team is dedicated to excellence and customer satisfaction in
-            everything we do.
+            everything we dos.
           </p>
         </div>
       </div>
